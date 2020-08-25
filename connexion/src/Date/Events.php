@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 class Events
 {
@@ -33,8 +33,6 @@ class Events
     }
 
     public function find(int $id){
-
-
 
         require_once './Event.php';
         $pdo = new PDO('mysql:host=localhost;dbname=ane','root','',[PDO::ATTR_ERRMODE =>PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE =>PDO::FETCH_ASSOC]);

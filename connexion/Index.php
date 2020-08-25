@@ -46,7 +46,7 @@ require_once './connect_db.php';
     </style>
 </head>
 <body>
-<?php session_start(); ?>
+<?php session_start(); var_dump($_SESSION);   ?>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">

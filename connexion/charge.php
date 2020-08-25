@@ -1,29 +1,22 @@
-
 <?php
 
+require_once 'vendor/autoload.php';
 
+$key = require_once ('config.php');
 
-use Stripe\Charge;
-use Stripe\Customer;
-use Stripe\Stripe;
+\Stripe\Stripe::setApiKey($key['key']);
 
-require_once '../vendor/autoload.php';
+\Stripe\Customer::create([
+    "description"=>'client',
 
-$email = 'abc@abc.fr';
+    'email'=>"test@test.fr"
+]);
 
-Stripe::setApiKey('sk_test_LgZBATKRdH41pyA60Bi3yxT600KSnzL8bW');
-$token = $_POST['stripeToken'];
-
-// Create a Customer
-$customer = Customer::create(array(
-"email" => $email,
-"source" => $token,
+$charge = \Stripe\Charge::create(array(
+   "amount"=>5000,
+    "currency"=>"eur",
+    "source"=>$_POST['stripeToken'],
+    "description"=>'client',
 ));
-// Save the customer id in your own database!
 
-// Charge the Customer instead of the card
-$charge = Charge::create(array(
-"amount" => 3000,
-"currency" => "eur",
-"customer" => $customer->id
-));
+var_dump($charge->values());

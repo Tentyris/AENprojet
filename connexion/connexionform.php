@@ -37,7 +37,8 @@
             <?php
 if (isset($error)) {
     echo '<font color = "red">' . $error . '</font> ';
-    header('Location : connexionform.php');
+     var_dump($_POST);
+}
             ?>
         </div>
     </div>

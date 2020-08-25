@@ -22,6 +22,7 @@ if(!empty($_POST)){
 
         $_SESSION['id'] = $userinfo['id'];
         $_SESSION['prenom'] = $userinfo['prenom'];
+        $_SESSION['nom'] = $userinfo['nom'];
         $_SESSION['mail'] = $userinfo['mail'];
         header("Location: index.php?id=".$_SESSION['id']);
 

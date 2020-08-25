@@ -262,7 +262,7 @@ function carbu() {
 
     document.getElementById('formresa').appendChild(input2);
     input2.setAttribute("type","text");
-    input2.setAttribute("name","lastname");
+    input2.setAttribute("name","firstname");
     input2.setAttribute("placeholder","Votre prénom");
 
 
@@ -311,7 +311,7 @@ function ulm() {
 
     document.getElementById('formresa').appendChild(input2);
     input2.setAttribute("type","text");
-    input2.setAttribute("name","lastname");
+    input2.setAttribute("name","firstname");
 
     let inputNb = document.createElement('input');
 

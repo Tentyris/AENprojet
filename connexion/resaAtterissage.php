@@ -134,11 +134,11 @@ if(!empty($_POST['name'])&& !empty($_POST['firstname']) && !empty($_POST['day'])
             $service,$resaTime
         ));
         $result = $quer->rowCount();
-        var_dump($result);
+        var_dump($resaTime);
 
         if ($result ===0){
-
-            header('Location: insertLanding.php?name='.$name.'&firstname='.$firstName.'&price='.$price.'&ga='.$ga.'&resatTime='.$resaTime.'&date='.$day.'&typePlane='.$typePlane);
+            echo $resaTime;
+            header('Location: insertLanding.php?name='.$name.'&firstname='.$firstName.'&price='.$price.'&ga='.$ga.'&resaTime='.$resaTime.'&date='.$day.'&typePlane='.$typePlane.'&service='.$service);
 
         }else {
             echo ' <div>Il y a déjà un atterrissage prévu à cette heure là </div>';
